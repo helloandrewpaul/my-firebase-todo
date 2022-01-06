@@ -7,8 +7,7 @@ import { db } from "./firebase";
 
 export default function App() {
   const [todos, setTodos] = useState([]);
-
-  const [currentTodo, setCurrentTodo] = React.useState(null);
+  const [currentTodo, setCurrentTodo] = useState(null);
 
   useEffect(() => {
     const unsub = db.collection("todos").onSnapshot((snap) => {
