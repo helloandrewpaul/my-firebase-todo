@@ -23,11 +23,9 @@ export default function App() {
 
   const handleCloseDialog = (todo) => {
     setCurrentTodo(null);
-
     if (!todo) {
       return;
     }
-
     const { id, subject, body } = todo;
     db.collection("todos").doc(id).set({ subject, body });
   };
