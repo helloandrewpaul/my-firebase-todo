@@ -30,13 +30,10 @@ export default function App() {
     db.collection("todos").doc(id).set({ subject, body });
   };
 
-  const handleEdit = (todo) => {
-    setCurrentTodo(todo);
-  };
+  const handleEdit = (todo) => setCurrentTodo(todo);
 
-  const handleDelete = (id) => {
-    db.collection("todos").doc(id).delete();
-  };
+  const handleDelete = (id) => db.collection("todos").doc(id).delete();
+  
   return (
     <Container fixed>
       <TodoCardDialog
